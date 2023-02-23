@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localización</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Leaflet.BigImage.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+</head>
+<body>
+    <main>
+        <div id="map-titles">
+            <h3>MACROLOCALIZACIÓN</h3>
+            <h3>MICROLOCALIZACIÓN</h3>
+        </div>
+        <div id="container-map">
+            <div class="maps" id="macro-map" style="height: 360px; width: 500px;"></div>
+            <div class="maps" id="micro-map" style="height: 360px; width: 500px;"></div>
+        </div>
+        <div id="options-maps">
+            <form>
+                <div id="clear-inputs">
+                    <div class="buttons-maps">
+                        <input class="input-button-maps" id="macro-clear" type="button" value="BORRAR CONTENIDO">
+                    </div>
+                    <div class="buttons-maps">
+                        <input class="input-button-maps" id="micro-clear" type="button" value="BORRAR CONTENIDO">
+                    </div>
+                </div>
+                <input class="input-button-maps" id="macro-print" type="button" value="GUARDAR IMAGENES">
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td class="table-value" colspan="3">PUNTO INICIAL</td>
+                </tr>
+                <tr>
+                    <td class="table-value" ><a class="copy-data" onclick="copyP1()">COPIAR</a></td>
+                    <td class="table-value" id="latT">LATITUD</td>
+                    <td class="table-value" id="lonT">LONGITUD</td>
+                </tr>
+            </thead>
+            <tr>
+                <td class="table-value">GRADOS</td>
+                <td class="table-value" id="latGi"></td>
+                <td class="table-value" id="lonGi"></td>
+            </tr>
+            <tr>
+                <td class="table-value" >MINUTOS</td>
+                <td class="table-value" id="latMi"></td>
+                <td class="table-value" id="lonMi"></td>
+            </tr>
+            <tr>
+                <td class="table-value" >SEGUNDOS</td>
+                <td class="table-value" id="latSi"></td>
+                <td class="table-value" id="lonSi"></td>
+            </tr>
+        </table>
+        <br/>
+        <table>
+            <thead>
+                <tr>
+                    <td class="table-value" colspan="3">PUNTO INICIAL</td>
+                </tr>
+                <tr>
+                    <td class="table-value" ><a class="copy-data" onclick="copyP2()">COPIAR</a></td>
+                    <td class="table-value" id="latY">LATITUD</td>
+                    <td class="table-value" id="lonY">LONGITUD</td>
+                </tr>
+            </thead>
+            <tr>
+                <td class="table-value">GRADOS</td>
+                <td class="table-value" id="latGf"></td>
+                <td class="table-value" id="lonGf"></td>
+            </tr>
+            <tr>
+                <td class="table-value" >MINUTOS</td>
+                <td class="table-value" id="latMf"></td>
+                <td class="table-value" id="lonMf"></td>
+            </tr>
+            <tr>
+                <td class="table-value" >SEGUNDOS</td>
+                <td class="table-value" id="latSf"></td>
+                <td class="table-value" id="lonSf"></td>
+            </tr>
+        </table>
+    </main>
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
+    <script src="Leaflet.BigImage.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
