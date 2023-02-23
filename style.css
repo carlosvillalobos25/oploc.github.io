@@ -115,6 +115,7 @@ table, thead, tr, td {
 
 .copy-data:hover {
     color: rgb(43, 55, 226);
+    cursor: pointer;
 }
 
 .copy-data:visited {
