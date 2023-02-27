@@ -35,6 +35,9 @@ main {
     max-width: 100%;
     height: 360px;
     width: 500px;
+}
+
+#micro-map {
     cursor: crosshair;
 }
 
