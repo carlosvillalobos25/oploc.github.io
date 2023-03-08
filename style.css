@@ -6,7 +6,7 @@ html, body {
 main {
     margin:auto;
     width: 1200px;
-    height: 110vh;
+    height: 100vh;
     background-color: rgb(208, 210, 228);
 }
 
@@ -17,28 +17,24 @@ main {
 }
 
 #map-titles h3 {
-    margin: 10px auto 0px auto;
+    margin: 5px auto 0px auto;
     width: 500px;
     text-align: center;
-    font-size: 24px;
+    font-size: 22px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #container-map, #options-maps {
-    margin: 5px auto;
+    margin: 3px auto;
     display:flex;
     width: 1200px;
 }
 
 #micro-map, #macro-map {
-    margin: auto auto 10px auto;
+    margin: auto auto 5px auto;
     max-width: 100%;
     height: 360px;
     width: 500px;
-}
-
-#micro-map {
-    cursor: crosshair;
 }
 
 #clear-inputs {
@@ -50,18 +46,28 @@ main {
 .buttons-maps {
     margin:auto;
     display: flex;
-    width: 500px;
+    width: 700px;
 }
 
+.kml-name {
+    margin:auto;
+    width: 400px;
+}
 .input-button-maps {
     margin:auto;
     width: 170px;
     font-weight: bold;
 }
 
+.input-text-maps {
+    margin: auto;
+    width: 400px;
+    text-align: center;
+}
+
 #macro-print {
     display: block;
-    margin:10px auto 5px auto;
+    margin:10px auto 3px auto;
 }
 
 .input-button-maps:hover {
@@ -97,7 +103,7 @@ main {
 table {
     margin: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 thead {
@@ -125,4 +131,3 @@ table, thead, tr, td {
 .copy-data:visited {
     color: blueviolet;
 }
-

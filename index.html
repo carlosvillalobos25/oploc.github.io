@@ -13,6 +13,8 @@
      <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin=""></script>
+     <script src = "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin = "anonymous" referrerpolicy = "no-referrer"> </script>
+     <script src="tokml.js"></script>
 </head>
 <body>
     <main>
@@ -34,7 +36,10 @@
                         <input class="input-button-maps" id="micro-clear" type="button" value="BORRAR CONTENIDO">
                     </div>
                 </div>
-                <input class="input-button-maps" id="macro-print" type="button" value="GUARDAR IMAGENES">
+                <div class="buttons-maps kml-name">
+                    <input class="input-text-maps" id="kml-name" type="text" placeholder="NOMBRE DE ARCHIVO KML">
+                </div>
+                <input class="input-button-maps" id="macro-print" type="button" value="GUARDAR">
             </form>
         </div>
         <table>

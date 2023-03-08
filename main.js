@@ -14,6 +14,7 @@ let lonGf = document.getElementById("lonGf");
 let lonMf = document.getElementById("lonMf");
 let lonSf = document.getElementById("lonSf");
 
+let kml_name = document.getElementById("kml-name");
 
 const macro_map = L.map('macro-map').setView([28.18, -105.47], 12);
 const micro_map = L.map('micro-map').setView([28.18, -105.47], 13);
@@ -231,6 +232,23 @@ function clear_micro() {
     polyline = null;
     polylineArr = [];
     micro_info.update();
+
+    //Latitud P1
+    latGi.innerText = "";
+    latMi.innerText  = "";
+    latSi.innerText = "";
+    //Longitud P1
+    lonGi.innerText = "";
+    lonMi.innerText = "";
+    lonSi.innerText = "";
+    //Latitud P2
+    latGf.innerText = "";
+    latMf.innerText = "";
+    latSf.innerText = "";
+    //Longitud P2
+    lonGf.innerText = "";
+    lonMf.innerText  = "";
+    lonSf.innerText = "";    
 }
 
 const macrom = L.control.bigImage({position: 'bottomleft'}).addTo(macro_map);
@@ -238,7 +256,30 @@ const microm = L.control.bigImage({position: 'bottomleft'}).addTo(micro_map);
 macrom.hideControlPanel();
 microm.hideControlPanel();
 
+function saveKML() {
+    let json = polyline.toGeoJSON();
+    let kml = tokml(json);
+    let kmlName = kml_name.value + ".kml";
+    var blob = new Blob([kml], {type: "text/plain;charset=uft-8",});
+    saveAs(blob, kmlName);
+    
+    kml_name.value = "";
+    clear_micro();
+}
+
 document.getElementById("macro-print").addEventListener("click", function() {
-    macrom.onPrint('macrolocalizacion.png');
-    microm.onPrint('microlocalizacion.png');
+    if (kml_name.value.length > 0 && polyline != null) {
+        macrom.onPrint('macrolocalizacion.png');
+        microm.onPrint('microlocalizacion.png');
+        saveKML();
+    } else {
+        if (kml_name.value.length == 0 && polyline == null) {
+            alert("Error: Agregar Polilínea y Nombre de archivo KML");
+        } else if (kml_name.value.length == 0) {
+            alert("Error: Agregar Nombre de archivo KML");
+        } else if (polyline == null) {
+            alert("Error: Agregar Polilínea");
+        }
+    }
 });
+
